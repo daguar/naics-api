@@ -54,8 +54,12 @@ module NaicsScraper
     content.strip
   end
 
-  def self.play_with_mongo
+  def self.play_with_year_in_mongo(year)
+    initialize_mongo_for_year(year)
     # GO TO TOWN
+    # Example play:
+    # 1. Check out all the 5-digit codes
+    #@@coll.find.each { |row| p "#{row['code']} - #{row['content']}" if row["code"].to_s.length == 5 }
     binding.pry
   end
 
